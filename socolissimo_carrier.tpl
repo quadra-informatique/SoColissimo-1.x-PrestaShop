@@ -1,3 +1,12 @@
+{*
+*  1997-2012 QUADRA INFORMATIQUE
+*
+*  @author QUADRA INFORMATIQUE <ecommerce@quadra-informatique.fr>
+*  @copyright 1997-2012 QUADRA INFORMATIQUE
+*  @version  Release: $Revision: 1.0 $
+*  @license  http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+*  
+*}
 <script type="text/javascript" src="{$content_dir}modules/socolissimo/jquery.fancybox-1.3.4.js"></script>
 <script type="text/javascript">
 {literal}
