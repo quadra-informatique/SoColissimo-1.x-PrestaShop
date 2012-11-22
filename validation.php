@@ -74,7 +74,7 @@ if (isset($return['SIGNATURE']) AND isset($return['CENAME']) AND isset($return['
 							$cart->updateQty(1, $product->id);
 						}
 					}
-
+					$cart->id_carrier = intval($_POST['TRPARAMPLUS']);
 					$cart->update();
 					Tools::redirect('order.php?step=3');
 				}
