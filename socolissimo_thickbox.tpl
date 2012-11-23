@@ -10,10 +10,10 @@
 
 <style type="text/css">
     .soBackward_compat_tab {literal}{ text-align: center; }{/literal}
-    .soBackward_compat_tab a {literal}{ margin: 10px; }{/literal}
+    .soBackward_compat_tab a {literal}{ margin: 0px; }{/literal}
 </style>
 
-<a href="#"  style="display:none" class="thickbox" id="soLink"></a>
+<iframe id="soFr" width="575" height="800" style="border:none;display:none;"src=""></iframe>
 
 <script type="text/javascript">
     var opc = false;
@@ -33,7 +33,7 @@ var soInputs = new Object();
 var soBwdCompat = "{$SOBWD_C}";
 var soCarrierId = "{$id_carrier}";
 var soToken = "{$token}";
-
+var baseDir = '{$content_dir}';
     {foreach from=$inputs item=input key=name name=myLoop}
         soInputs.{$name} = "{$input|strip_tags|addslashes}";
     {/foreach}
@@ -42,13 +42,17 @@ var soToken = "{$token}";
 
         $(document).ready(function()
         {
-            $('#soLink').attr('href', 'modules/socolissimo/redirect.php' + serialiseInput(soInputs)+'?keepThis=true&TB_iframe=true&height=450&width=550')
           
                      $('[name=processCarrier]').click( function() {
               if (($('#id_carrier' + soCarrierId).is(':checked')) || ($('.delivery_option_radio:checked').val() == soCarrierId+','))
                 {
-                    if (acceptCGV('{/literal}{l s='Please accept the terms of service before the next step.'}{literal}'))
-                        $("#soLink").trigger("click");
+                    if (acceptCGV('{/literal}{l s='Please accept the terms of service before the next step.'}{literal}')){
+						$('#soFr').attr('src',  baseDir+'modules/socolissimo/redirect.php' + serialiseInput(soInputs));
+						$('table').css('display', 'none');
+						$('h3').css('display', 'none');
+						$('p').css('display', 'none');
+						$('#soFr').css('display', 'block');
+					}
                     return false;
                 }
                 return true;

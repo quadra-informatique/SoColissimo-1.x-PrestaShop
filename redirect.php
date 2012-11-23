@@ -43,11 +43,9 @@ $param_plus = array(
 );
 
 $inputs['trParamPlus'] = implode('|', $param_plus);
-$inputs['trParamPlus'] = str_replace('|?keepThis=true','',$inputs['trParamPlus'] );
 // Add signature to get the gift and gift message in the trParamPlus
 $inputs['signature'] = $so->generateKey($inputs);
 
-//$onload_script = 'parent.$.fancybox.close();';
 if (Tools::isSubmit('first_call'))
 	$onload_script = 'document.getElementById(\'socoForm\').submit();';
 ?>

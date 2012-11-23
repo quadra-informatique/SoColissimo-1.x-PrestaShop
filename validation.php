@@ -74,6 +74,7 @@ if (isset($return['SIGNATURE']) AND isset($return['CENAME']) AND isset($return['
 							$cart->updateQty(1, $product->id);
 						}
 					}
+					// bug sometime and loose id_carrier so reassign value
 					$cart->id_carrier = intval($_POST['TRPARAMPLUS']);
 					$cart->update();
 					Tools::redirect('order.php?step=3');
