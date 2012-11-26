@@ -48,7 +48,7 @@ var baseDir = '{$content_dir}';
                 {
                     if (acceptCGV('{/literal}{l s='Please accept the terms of service before the next step.'}{literal}')){
 						$('#soFr').attr('src',  baseDir+'modules/socolissimo/redirect.php' + serialiseInput(soInputs));
-						$('table').css('display', 'none');
+						 $('tr').css('display', 'none');
 						$('h3').css('display', 'none');
 						$('p').css('display', 'none');
 						$('#soFr').css('display', 'block');
