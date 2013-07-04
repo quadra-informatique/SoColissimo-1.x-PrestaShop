@@ -33,6 +33,14 @@ $_MODULE['<{socolissimo}prestashop>socolissimo_64979b52d796defbdf05356df9e37d57'
 $_MODULE['<{socolissimo}prestashop>socolissimo_c76660d589be9a49e8846e51b71744ae'] = 'Jour(s)';
 $_MODULE['<{socolissimo}prestashop>socolissimo_fee5b44342f1173f7a92b97ace566e57'] = 'Délai moyen de préparation de vos commandes';
 $_MODULE['<{socolissimo}prestashop>socolissimo_25a997f8f21d9a0ec24e902baf9a99c0'] = 'Le délai de préparation de commande doit être identique à celui saisi dans le Back Office ColiPoste';
+$_MODULE['<{socolissimo}prestashop>socolissimo_2c26692c1e229616d8f5697ff5131161'] = 'Coût livraison point commerçant en France';
+$_MODULE['<{socolissimo}prestashop>socolissimo_7001bdc2a0dca0abf8cb633029c68ef6'] = 'Coût livraison point commerçant en France Ce coût s\'applique en lieu et place du coût \"normal\" pour la livraison en point commerçant en France. Il doit être identique à celui du backoffice Colis Poste. Mettre à zéro pour ne pas l\'utiliser.';
+$_MODULE['<{socolissimo}prestashop>socolissimo_27146b3d202b8145c2202837f68d7dc8'] = 'Autoriser la livraison en Belgique';
+$_MODULE['<{socolissimo}prestashop>socolissimo_00d23a76e43b46dae9ec7aa9dcbebb32'] = 'Activé';
+$_MODULE['<{socolissimo}prestashop>socolissimo_b9f5c797ebbf55adccdd8539a65a0241'] = 'Désactivé';
+$_MODULE['<{socolissimo}prestashop>socolissimo_e71b5cf532cb70a086decaadd682c80d'] = 'Active ou désactive la livraison en Belgique';
+$_MODULE['<{socolissimo}prestashop>socolissimo_bd80ee27fdda9376df68d171b69776cb'] = 'Surcoût pour la livraison en Belgique';
+$_MODULE['<{socolissimo}prestashop>socolissimo_26d95c96501cd120f8d7608f9001b6ce'] = 'Surcoût pour la livraison en Belgique Le \"surcoût\" Belgique doit être identique à celui saisi dans le back-office ColiPoste.';
 $_MODULE['<{socolissimo}prestashop>socolissimo_31e3fd47be6f64fb2e0a4f85cb63a069'] = 'Surcoût';
 $_MODULE['<{socolissimo}prestashop>socolissimo_a68e8fd6d255edb0ca099c7400252694'] = 'Surcoût à appliquer pour la livraison à domicile sur rendez-vous';
 $_MODULE['<{socolissimo}prestashop>socolissimo_5b8aa3268fe97228ab7337ef8cdabfb5'] = 'Le \"surcoût\" doit être identique à celui saisi dans le Back Office ColiPoste';
@@ -44,8 +52,6 @@ $_MODULE['<{socolissimo}prestashop>socolissimo_06db62a9266228955b3b86e1125d71b7'
 $_MODULE['<{socolissimo}prestashop>socolissimo_b0b2896e75025245cbb05e96bd1466d6'] = 'Adresse FO';
 $_MODULE['<{socolissimo}prestashop>socolissimo_ce88aabea3b363c753b02ddcb2fbafff'] = 'Url de l\'administration de So Colissimo';
 $_MODULE['<{socolissimo}prestashop>socolissimo_85068ddf0b9bcbb6913008356fe328a0'] = 'Supervision';
-$_MODULE['<{socolissimo}prestashop>socolissimo_00d23a76e43b46dae9ec7aa9dcbebb32'] = 'Activé';
-$_MODULE['<{socolissimo}prestashop>socolissimo_b9f5c797ebbf55adccdd8539a65a0241'] = 'Désactivé';
 $_MODULE['<{socolissimo}prestashop>socolissimo_060823982d2849648aa0e1fb01144e6f'] = 'Autoriser ou non la verification de la disponibilité des services SoColissimo';
 $_MODULE['<{socolissimo}prestashop>socolissimo_32996bdf4214d6cb8bf7fa02273813c8'] = 'Adresse de verification';
 $_MODULE['<{socolissimo}prestashop>socolissimo_995a56aecac4198b9bc0a17a976561b5'] = 'Adresse de verification de disponibilité';
@@ -62,6 +68,7 @@ $_MODULE['<{socolissimo}prestashop>socolissimo_5b1ea9a874e8e67af093b45ad34be1bd'
 $_MODULE['<{socolissimo}prestashop>socolissimo_ccdfd8ad75276f6e24db51d02e83e361'] = 'Surcoût invalide';
 $_MODULE['<{socolissimo}prestashop>socolissimo_20015706a8cbd457cbb6ea3e7d5dc9b3'] = 'Configuration mise à jour';
 $_MODULE['<{socolissimo}prestashop>socolissimo_738a1d4da1b5dc5883063ec9856b637b'] = 'Configuration erreur';
+$_MODULE['<{socolissimo}prestashop>socolissimo_5da618e8e4b89c66fe86e32cdafde142'] = 'A partir de';
 $_MODULE['<{socolissimo}prestashop>socolissimo_201bdb87f8e278b943d07ae924d5de6e'] = 'Mode de livraison';
 $_MODULE['<{socolissimo}prestashop>socolissimo_26c3322326d6c253776082396d0b525a'] = 'Id du point de retrait';
 $_MODULE['<{socolissimo}prestashop>socolissimo_fe0ddc6b5ddddfa1203a1931726a06b4'] = 'Point de retrait';

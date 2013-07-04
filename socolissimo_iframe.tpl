@@ -5,7 +5,7 @@
 *  @copyright 1997-2012 QUADRA INFORMATIQUE
 *  @version  Release: $Revision: 1.0 $
 *  @license  http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
-*  
+*
 *}
 
 <style type="text/css">
@@ -33,6 +33,7 @@ var soInputs = new Object();
 var soBwdCompat = "{$SOBWD_C}";
 var soCarrierId = "{$id_carrier}";
 var soToken = "{$token}";
+var initialCost = "{$initialCost}";
 var baseDir = '{$content_dir}';
     {foreach from=$inputs item=input key=name name=myLoop}
         soInputs.{$name} = "{$input|strip_tags|addslashes}";
@@ -42,16 +43,23 @@ var baseDir = '{$content_dir}';
 
         $(document).ready(function()
         {
-          
+$($('.std input#id_carrier'+soCarrierId).parent().parent()).find('.carrier_price .price').text(initialCost);
+                $($('.std input#id_carrier'+soCarrierId).parent().parent()).find('.carrier_price').css('white-space','nowrap');
                      $('[name=processCarrier]').click( function() {
               if (($('#id_carrier' + soCarrierId).is(':checked')) || ($('.delivery_option_radio:checked').val() == soCarrierId+','))
                 {
                     if (acceptCGV('{/literal}{l s='Please accept the terms of service before the next step.'}{literal}')){
-						$('#soFr').attr('src',  baseDir+'modules/socolissimo/redirect.php' + serialiseInput(soInputs));
-						 $('tr').css('display', 'none');
-						$('h3').css('display', 'none');
-						$('p').css('display', 'none');
-						$('#soFr').css('display', 'block');
+						$('.std td').css('display', 'none');
+                                 $('.std th').css('display', 'none');
+
+                           $('h3.condition_title').css('display', 'none');
+                           $('p.checkbox').css('display', 'none');
+                           $('h3.carrier_title').css('display', 'none');
+                           $('h3.gift_title').css('display', 'none');
+                           $('#gift_div').css('display', 'none');
+                           $('p.cart_navigation').css('display', 'none');
+                           $('#soFr').css('display', 'block');
+                           $('#soFr').attr('src',  baseDir+'modules/socolissimo/redirect.php' + serialiseInput(soInputs));
 					}
                     return false;
                 }

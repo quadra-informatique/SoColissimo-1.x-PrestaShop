@@ -1,7 +1,7 @@
 <?php
 /**
  * ---------------------------------------------------------------------------------
- * 
+ *
  * 1997-2012 Quadra Informatique
  *
  * NOTICE OF LICENSE
@@ -19,11 +19,10 @@
  * @license http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  *
  * ---------------------------------------------------------------------------------
-*/
-
+ */
 require_once('../../config/config.inc.php');
-require_once(_PS_ROOT_DIR_.'/init.php');
-require_once(dirname(__FILE__).'/classes/SCFields.php');
+require_once(_PS_ROOT_DIR_ . '/init.php');
+require_once(dirname(__FILE__) . '/classes/SCFields.php');
 
 $so = new SCfields('API');
 
@@ -31,15 +30,15 @@ $fields = $so->getFields();
 
 // Build back the fields list for SoColissimo, gift infos are send using the JS
 $inputs = array();
-foreach($_GET as $key => $value)
-	if (in_array($key, $fields))
-		$inputs[$key] = Tools::getValue($key);
+foreach ($_GET as $key => $value)
+    if (in_array($key, $fields))
+        $inputs[$key] = Tools::getValue($key);
 
 $param_plus = array(
-	// Get the data set before
-	Tools::getValue('trParamPlus'),
-	Tools::getValue('gift'),
-	Tools::getValue('gift_message')
+    // Get the data set before
+    Tools::getValue('trParamPlus'),
+    Tools::getValue('gift'),
+    Tools::getValue('gift_message')
 );
 
 $inputs['trParamPlus'] = implode('|', $param_plus);
@@ -47,20 +46,25 @@ $inputs['trParamPlus'] = implode('|', $param_plus);
 $inputs['signature'] = $so->generateKey($inputs);
 
 if (Tools::isSubmit('first_call'))
-	$onload_script = 'document.getElementById(\'socoForm\').submit();';
+    $onload_script = 'document.getElementById(\'socoForm\').submit();';
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
-	<head>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=iso-8859-1" />
-	</head>
-	<body onload="<?php echo $onload_script; ?>">
-		<form id="socoForm" name="form" action="<?php echo Configuration::get('SOCOLISSIMO_URL'); ?>" method="POST">
-			<?php
-				foreach($inputs as $key => $val)
-					echo '<input type="hidden" name="'.$key.'" value="'.$val.'"/>';
-			?>
-		</form>
-	</body>
+    <head>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=iso-8859-1" />
+    </head>
+    <body onload="<?php echo $onload_script; ?>">
+        <div style="width:320px;margin:0 auto;text-align:center;">
+            <form id="socoForm" name="form" action="<?php echo Configuration::get('SOCOLISSIMO_URL'); ?>" method="POST">
+                <?php
+                foreach ($inputs as $key => $val)
+                    echo '<input type="hidden" name="' . $key . '" value="' . $val . '"/>';
+                ?>
+                <img src="logo.gif" />
+                <p>Vous allez être redirigé vers Socolissimo dans quelques instants, si ce n'est pas le cas veuillez cliquer sur le bouton.</p>
+                <p><img src="ajax-loader.gif" /></p>
+            </form>
+        </div>
+    </body>
 </html>
