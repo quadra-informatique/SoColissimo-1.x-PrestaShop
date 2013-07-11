@@ -1,12 +1,24 @@
-{*
-*  1997-2012 QUADRA INFORMATIQUE
-*
-*  @author QUADRA INFORMATIQUE <ecommerce@quadra-informatique.fr>
-*  @copyright 1997-2012 QUADRA INFORMATIQUE
-*  @version  Release: $Revision: 1.0 $
-*  @license  http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
-*
-*}
+{**
+ * ---------------------------------------------------------------------------------
+ *
+ * 1997-2013 Quadra Informatique
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to ecommerce@quadra-informatique.fr so we can send you a copy immediately.
+ *
+ * @author Quadra Informatique <ecommerce@quadra-informatique.fr>
+ * @copyright 1997-2013 Quadra Informatique
+ * @version Release: $Revision: 1.0 $
+ * @license http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ *
+ * ---------------------------------------------------------------------------------
+ *}
 
 <style type="text/css">
     .soBackward_compat_tab {literal}{ text-align: center; }{/literal}
@@ -32,6 +44,7 @@
 var soInputs = new Object();
 var soBwdCompat = "{$SOBWD_C}";
 var soCarrierId = "{$id_carrier}";
+var soCarrierIdSeller = "{$id_carrier_seller}";
 var soToken = "{$token}";
 var initialCost = "{$initialCost}";
 var baseDir = '{$content_dir}';
@@ -44,6 +57,7 @@ var baseDir = '{$content_dir}';
         $(document).ready(function()
         {
 $($('.std input#id_carrier'+soCarrierId).parent().parent()).find('.carrier_price .price').text(initialCost);
+    $('#id_carrier'+soCarrierIdSeller).parent().parent().remove();
                 $($('.std input#id_carrier'+soCarrierId).parent().parent()).find('.carrier_price').css('white-space','nowrap');
                      $('[name=processCarrier]').click( function() {
               if (($('#id_carrier' + soCarrierId).is(':checked')) || ($('.delivery_option_radio:checked').val() == soCarrierId+','))

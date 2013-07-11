@@ -13,6 +13,7 @@ $_MODULE['<{socolissimo}prestashop>socolissimo_798547c41ec3e64e2322df678e939344'
 $_MODULE['<{socolissimo}prestashop>socolissimo_ac08649aa09ff3b879525627bf086dd1'] = '\'Clé de cryptage\'';
 $_MODULE['<{socolissimo}prestashop>socolissimo_a3a53f075adf77334cc34d0f7497ff44'] = '\'Url de l\'administration de SoColissimo\'';
 $_MODULE['<{socolissimo}prestashop>socolissimo_4d470fde8487e755a50e9235e3dc13ab'] = 'doivent être renseignés pour fonctionner correctement';
+$_MODULE['<{socolissimo}prestashop>socolissimo_b0573388e2dd39a9555e2a7f4e06ed82'] = 'Clé invalide';
 $_MODULE['<{socolissimo}prestashop>socolissimo_b5a7adde1af5c87d7fd797b6245c2a39'] = 'Description';
 $_MODULE['<{socolissimo}prestashop>socolissimo_f9bb2808d4b756fec1de88a30a83f4ba'] = 'So Colissimo est un service proposé par La Poste, qui vous permet d\'offrir à vos acheteurs 5 modes de livraison :';
 $_MODULE['<{socolissimo}prestashop>socolissimo_b744007f56f155926b4584feb2570e14'] = 'Livraison à domicile';
@@ -34,7 +35,7 @@ $_MODULE['<{socolissimo}prestashop>socolissimo_c76660d589be9a49e8846e51b71744ae'
 $_MODULE['<{socolissimo}prestashop>socolissimo_fee5b44342f1173f7a92b97ace566e57'] = 'Délai moyen de préparation de vos commandes';
 $_MODULE['<{socolissimo}prestashop>socolissimo_25a997f8f21d9a0ec24e902baf9a99c0'] = 'Le délai de préparation de commande doit être identique à celui saisi dans le Back Office ColiPoste';
 $_MODULE['<{socolissimo}prestashop>socolissimo_2c26692c1e229616d8f5697ff5131161'] = 'Coût livraison point commerçant en France';
-$_MODULE['<{socolissimo}prestashop>socolissimo_7001bdc2a0dca0abf8cb633029c68ef6'] = 'Coût livraison point commerçant en France Ce coût s\'applique en lieu et place du coût \"normal\" pour la livraison en point commerçant en France. Il doit être identique à celui du backoffice Colis Poste. Mettre à zéro pour ne pas l\'utiliser.';
+$_MODULE['<{socolissimo}prestashop>socolissimo_7001bdc2a0dca0abf8cb633029c68ef6'] = 'Coût livraison point commerçant en France Ce coût s\'applique en lieu et place du coût \"normal\" pour la livraison en point commerçant en France. Il doit être identique à celui du backoffice Colis Poste. Pour utiliser ce coût un autre transporteur (So colissimo CC) a été crée : Vous devez renseigner son tarif TTC au même montant que le coût de livraison point commerçant. Mettre à zéro pour ne pas l\'utiliser. ';
 $_MODULE['<{socolissimo}prestashop>socolissimo_27146b3d202b8145c2202837f68d7dc8'] = 'Autoriser la livraison en Belgique';
 $_MODULE['<{socolissimo}prestashop>socolissimo_00d23a76e43b46dae9ec7aa9dcbebb32'] = 'Activé';
 $_MODULE['<{socolissimo}prestashop>socolissimo_b9f5c797ebbf55adccdd8539a65a0241'] = 'Désactivé';
@@ -42,6 +43,8 @@ $_MODULE['<{socolissimo}prestashop>socolissimo_e71b5cf532cb70a086decaadd682c80d'
 $_MODULE['<{socolissimo}prestashop>socolissimo_bd80ee27fdda9376df68d171b69776cb'] = 'Surcoût pour la livraison en Belgique';
 $_MODULE['<{socolissimo}prestashop>socolissimo_26d95c96501cd120f8d7608f9001b6ce'] = 'Surcoût pour la livraison en Belgique Le \"surcoût\" Belgique doit être identique à celui saisi dans le back-office ColiPoste.';
 $_MODULE['<{socolissimo}prestashop>socolissimo_31e3fd47be6f64fb2e0a4f85cb63a069'] = 'Surcoût';
+$_MODULE['<{socolissimo}prestashop>socolissimo_5f2b3818a8226aa853fc45c83783b12d'] = 'Taxe';
+$_MODULE['<{socolissimo}prestashop>socolissimo_6f3455d187a23443796efdcbe044096b'] = 'Aucune taxe';
 $_MODULE['<{socolissimo}prestashop>socolissimo_a68e8fd6d255edb0ca099c7400252694'] = 'Surcoût à appliquer pour la livraison à domicile sur rendez-vous';
 $_MODULE['<{socolissimo}prestashop>socolissimo_5b8aa3268fe97228ab7337ef8cdabfb5'] = 'Le \"surcoût\" doit être identique à celui saisi dans le Back Office ColiPoste';
 $_MODULE['<{socolissimo}prestashop>socolissimo_914419aa32f04011357d3b604a86d7eb'] = 'Transporteur';
@@ -73,4 +76,4 @@ $_MODULE['<{socolissimo}prestashop>socolissimo_201bdb87f8e278b943d07ae924d5de6e'
 $_MODULE['<{socolissimo}prestashop>socolissimo_26c3322326d6c253776082396d0b525a'] = 'Id du point de retrait';
 $_MODULE['<{socolissimo}prestashop>socolissimo_fe0ddc6b5ddddfa1203a1931726a06b4'] = 'Point de retrait';
 $_MODULE['<{socolissimo}prestashop>socolissimo_943d641a55c5f1a32331d21104cd7637'] = 'Adresse du point de retrait';
-$_MODULE['<{socolissimo}prestashop>socolissimo_thickbox_1da9c63ab8644e375c6951f3876071ef'] = 'Vous devez accepter les conditions générales de vente pour passer à l\'étape suivante';
+$_MODULE['<{socolissimo}prestashop>socolissimo_iframe_1da9c63ab8644e375c6951f3876071ef'] = 'Vous devez accepter les conditions générales de vente pour passer à l\'étape suivante';

@@ -1,9 +1,8 @@
 <?php
-
 /**
  * ---------------------------------------------------------------------------------
  *
- * 1997-2012 Quadra Informatique
+ * 1997-2013 Quadra Informatique
  *
  * NOTICE OF LICENSE
  *
@@ -15,7 +14,7 @@
  * to ecommerce@quadra-informatique.fr so we can send you a copy immediately.
  *
  * @author Quadra Informatique <ecommerce@quadra-informatique.fr>
- * @copyright 1997-2012 Quadra Informatique
+ * @copyright 1997-2013 Quadra Informatique
  * @version Release: $Revision: 1.0 $
  * @license http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  *
@@ -24,7 +23,8 @@
 require_once(dirname(__FILE__) . '/SCError.php');
 
 // Inherit of Socolissimo to have acces to the module method and objet model method
-class SCFields extends SCError {
+class SCFields extends SCError
+    {
     // Restriction
     const REQUIRED = 1;
     const NOT_REQUIRED = 2;
@@ -49,7 +49,7 @@ class SCFields extends SCError {
     // List of the available delivery type
     public $delivery_list = array(
         SCFields::HOME_DELIVERY => array('DOM', 'RDV'),
-        SCFields::RELAY_POINT => array('BPR', 'A2P', 'MRL', 'CIT', 'ACP', 'CDI'),
+        SCFields::RELAY_POINT => array('BPR', 'A2P', 'MRL', 'CIT', 'ACP', 'CDI', 'CMT'),
         SCFields::API_REQUEST => array('API')
     );
     // By default, use the home delivery
@@ -170,7 +170,7 @@ class SCFields extends SCError {
             'ERR_CHARSET' => SCFields::NOT_REQUIRED,
         ),
         SCFields::API_REQUEST => array(
-           'pudoFOId' => SCFields::REQUIRED,
+            'pudoFOId' => SCFields::REQUIRED,
             'ceName' => SCFields::NOT_REQUIRED,
             'dyPreparationTime' => SCFields::NOT_REQUIRED,
             'dyForwardingCharges' => SCFields::REQUIRED,
@@ -206,13 +206,14 @@ class SCFields extends SCError {
         )
     );
 
-    public function __construct($delivery = 'DOM') {
+    public function __construct($delivery = 'DOM')
+        {
         parent::__construct();
 
         //include(dirname(__FILE__).'/../backward_compatibility/backward.php');
 
         $this->setDeliveryMode($delivery);
-    }
+        }
 
     /**
      * Check if the field exist for Socolissimp
@@ -220,9 +221,10 @@ class SCFields extends SCError {
      * @param $name
      * @return bool
      */
-    public function isAvailableFields($name) {
+    public function isAvailableFields($name)
+        {
         return array_key_exists(strtoupper(trim($name)), $this->fields[$this->delivery_mode]);
-    }
+        }
 
     /**
      * Get field for a given restriction
@@ -230,17 +232,19 @@ class SCFields extends SCError {
      * @param int $type
      * @return mixed
      */
-    public function getFields($restriction = SCFields::ALL) {
+    public function getFields($restriction = SCFields::ALL)
+        {
         $tab = array();
 
-        if (in_array($restriction, $this->restriction_list)) {
+        if (in_array($restriction, $this->restriction_list))
+            {
             foreach ($this->fields[$this->delivery_mode] as $key => $value)
                 if ($value == $restriction || $restriction == SCFields::ALL)
                     $tab[] = $key;
-        }
+            }
 
         return $tab;
-    }
+        }
 
     /**
      * Check if the fields is required
@@ -248,10 +252,11 @@ class SCFields extends SCError {
      * @param $name
      * @return bool
      */
-    public function isRequireField($name) {
+    public function isRequireField($name)
+        {
         return (in_array(strtoupper($name), $this->fields[$this->delivery_mode]) &&
                 $this->fields[$this->delivery_mode] == SCFields::REQUIRED);
-    }
+        }
 
     /**
      * Set delivery mode
@@ -259,17 +264,21 @@ class SCFields extends SCError {
      * @param $delivery
      * @return bool
      */
-    public function setDeliveryMode($delivery) {
-        if ($delivery) {
-            foreach ($this->delivery_list as $delivery_mode => $list) {
-                if (in_array($delivery, $list)) {
+    public function setDeliveryMode($delivery)
+        {
+        if ($delivery)
+            {
+            foreach ($this->delivery_list as $delivery_mode => $list)
+                {
+                if (in_array($delivery, $list))
+                    {
                     $this->delivery_mode = $delivery_mode;
                     return true;
+                    }
                 }
             }
-        }
         return false;
-    }
+        }
 
     /**
      * Check if the returned key is proper to the generated one.
@@ -278,11 +287,13 @@ class SCFields extends SCError {
      * @param $params
      * @return bool
      */
-    public function isCorrectSignKey($sign, $params) {
+    public function isCorrectSignKey($sign, $params)
+        {
 
 
         $tab = array();
-        foreach ($this->fields[$this->delivery_mode] as $key => $value) {
+        foreach ($this->fields[$this->delivery_mode] as $key => $value)
+            {
 
             if ($value == SCFields::IGNORED)
                 continue;
@@ -290,9 +301,9 @@ class SCFields extends SCError {
             $key = trim($key);
             if (isset($params[$key]))
                 $tab[$key] = $params[$key];
-        }
+            }
 
         return ($sign == $this->generateKey($tab));
-    }
+        }
 
-}
+    }

@@ -1,8 +1,8 @@
 <?php
 /**
  * ---------------------------------------------------------------------------------
- * 
- * 1997-2012 Quadra Informatique
+ *
+ * 1997-2013 Quadra Informatique
  *
  * NOTICE OF LICENSE
  *
@@ -14,12 +14,12 @@
  * to ecommerce@quadra-informatique.fr so we can send you a copy immediately.
  *
  * @author Quadra Informatique <ecommerce@quadra-informatique.fr>
- * @copyright 1997-2012 Quadra Informatique
+ * @copyright 1997-2013 Quadra Informatique
  * @version Release: $Revision: 1.0 $
  * @license http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  *
  * ---------------------------------------------------------------------------------
-*/
+ */
 
 include_once('../../config/config.inc.php');
 include_once('../../init.php');

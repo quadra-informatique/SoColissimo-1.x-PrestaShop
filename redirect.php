@@ -2,7 +2,7 @@
 /**
  * ---------------------------------------------------------------------------------
  *
- * 1997-2012 Quadra Informatique
+ * 1997-2013 Quadra Informatique
  *
  * NOTICE OF LICENSE
  *
@@ -14,7 +14,7 @@
  * to ecommerce@quadra-informatique.fr so we can send you a copy immediately.
  *
  * @author Quadra Informatique <ecommerce@quadra-informatique.fr>
- * @copyright 1997-2012 Quadra Informatique
+ * @copyright 1997-2013 Quadra Informatique
  * @version Release: $Revision: 1.0 $
  * @license http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  *
@@ -38,7 +38,7 @@ $param_plus = array(
     // Get the data set before
     Tools::getValue('trParamPlus'),
     Tools::getValue('gift'),
-    Tools::getValue('gift_message')
+    $so->replaceAccentedChars(Tools::getValue('gift_message'))
 );
 
 $inputs['trParamPlus'] = implode('|', $param_plus);
@@ -62,8 +62,8 @@ if (Tools::isSubmit('first_call'))
                     echo '<input type="hidden" name="' . $key . '" value="' . $val . '"/>';
                 ?>
                 <img src="logo.gif" />
-                <p>Vous allez être redirigé vers Socolissimo dans quelques instants, si ce n'est pas le cas veuillez cliquer sur le bouton.</p>
-                <p><img src="ajax-loader.gif" /></p>
+                <p>Vous allez être redirigé vers socolissimo dans un instant, si ce n'est pas le cas, veuillez cliquer sur le bouton.</p>
+                <p><img src="img/ajax-loader.gif" /></p>
             </form>
         </div>
     </body>
