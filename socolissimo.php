@@ -667,7 +667,7 @@ class Socolissimo extends Module
             $nameCountry = "France";
         if ($deliveryInfos ['cecountry'] == "BE")
             $nameCountry = "Belgique";
-        if ((intval($order->id_carrier) == intval($soCarrier->id) OR (intval($order->id_carrier) == intval($soCarrierCC->id) OR in_array(intval($order->id_carrier), explode('|', Configuration::get('SOCOLISSIMO_CARRIER_ID_HIST')))) AND !empty($deliveryInfos))
+        if ((intval($order->id_carrier) == intval($soCarrier->id) OR intval($order->id_carrier) == intval($soCarrierCC->id) OR in_array(intval($order->id_carrier), explode('|', Configuration::get('SOCOLISSIMO_CARRIER_ID_HIST')))) AND !empty($deliveryInfos))
         {
             $html = '<br><br><fieldset style="width:400px;"><legend><img src="'.$this->_path.'logo.gif" alt="" /> '.$this->l('So Colissimo').'</legend>';
             $html .= '<b>'.$this->l('Delivery mode').' : </b>';
