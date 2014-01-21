@@ -660,13 +660,14 @@ class Socolissimo extends Module
         $addressDelivery = new Address(intval($order->id_address_delivery), intval($params['cookie']->id_lang));
 
         $soCarrier = new Carrier(intval(Configuration::get('SOCOLISSIMO_CARRIER_ID')));
+				$soCarrierCC = new Carrier(intval(Configuration::get('SOCOLISSIMO_CARRIER_ID_SELLER')));
         $deliveryInfos = $this->getDeliveryInfos(intval($order->id_cart), intval($order->id_customer));
         // in 1.7.0 country is mandatory
         if ($deliveryInfos ['cecountry'] == "FR")
             $nameCountry = "France";
         if ($deliveryInfos ['cecountry'] == "BE")
             $nameCountry = "Belgique";
-        if ((intval($order->id_carrier) == intval($soCarrier->id) OR in_array(intval($order->id_carrier), explode('|', Configuration::get('SOCOLISSIMO_CARRIER_ID_HIST')))) AND !empty($deliveryInfos))
+        if ((intval($order->id_carrier) == intval($soCarrier->id) OR (intval($order->id_carrier) == intval($soCarrierCC->id) OR in_array(intval($order->id_carrier), explode('|', Configuration::get('SOCOLISSIMO_CARRIER_ID_HIST')))) AND !empty($deliveryInfos))
         {
             $html = '<br><br><fieldset style="width:400px;"><legend><img src="'.$this->_path.'logo.gif" alt="" /> '.$this->l('So Colissimo').'</legend>';
             $html .= '<b>'.$this->l('Delivery mode').' : </b>';
