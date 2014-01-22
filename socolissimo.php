@@ -720,6 +720,11 @@ class Socolissimo extends Module
             Configuration::updateValue('SOCOLISSIMO_CARRIER_ID', intval($params['carrier']->id));
             Configuration::updateValue('SOCOLISSIMO_CARRIER_ID_HIST', Configuration::get('SOCOLISSIMO_CARRIER_ID_HIST').'|'.intval($params['carrier']->id));
         }
+				if (intval($params['id_carrier']) == intval(Configuration::get('SOCOLISSIMO_CARRIER_ID_SELLER')))
+        {
+            Configuration::updateValue('SOCOLISSIMO_CARRIER_ID_SELLER', intval($params['carrier']->id));
+            Configuration::updateValue('SOCOLISSIMO_CARRIER_ID_HIST', Configuration::get('SOCOLISSIMO_CARRIER_ID_HIST').'|'.intval($params['carrier']->id));
+        }
     }
 
     public function make_key($ceName, $dyPraparationTime, $dyForwardingCharges, $trClientNumber, $orderId)
