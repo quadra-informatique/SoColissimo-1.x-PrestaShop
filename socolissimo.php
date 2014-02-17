@@ -584,6 +584,12 @@ class Socolissimo extends Module
             if (!$inputs['dyForwardingChargesCMT'])
                 unset($inputs['dyForwardingChargesCMT']);
 
+	    $std_cost = number_format((float)($params['cart']->getOrderShippingCost($carrierSo->id)), 2, ',', '');
+            $from_cost = $std_cost;
+            if ($seller_cost)
+               if ((float)str_replace(',','.',$seller_cost) < (float)str_replace(',','.',$std_cost))
+                  $from_cost = $seller_cost;
+
             $smarty->assign(array(
                 'select_label' => $this->l('Select delivery mode'),
                 'edit_label' => $this->l('Edit delivery mode'),
@@ -593,7 +599,7 @@ class Socolissimo extends Module
                 'id_carrier_seller' => Configuration::get('SOCOLISSIMO_CARRIER_ID_SELLER'),
                 'SOBWD_C' => false,
                 'inputs' => $inputs,
-                'initialCost' => $this->l('From').' '.number_format((float)($params['cart']->getOrderShippingCost($carrierSo->id)), 2, ',', '').' €', // to change label for price in tpl
+                'initialCost' => $this->l('From').' '.$from_cost.' €', // to change label for price in tpl
                 'finishProcess' => $this->l('To choose SoColissimo, click on a delivery method'))
             );
 
@@ -720,7 +726,7 @@ class Socolissimo extends Module
             Configuration::updateValue('SOCOLISSIMO_CARRIER_ID', intval($params['carrier']->id));
             Configuration::updateValue('SOCOLISSIMO_CARRIER_ID_HIST', Configuration::get('SOCOLISSIMO_CARRIER_ID_HIST').'|'.intval($params['carrier']->id));
         }
-				if (intval($params['id_carrier']) == intval(Configuration::get('SOCOLISSIMO_CARRIER_ID_SELLER')))
+	if (intval($params['id_carrier']) == intval(Configuration::get('SOCOLISSIMO_CARRIER_ID_SELLER')))
         {
             Configuration::updateValue('SOCOLISSIMO_CARRIER_ID_SELLER', intval($params['carrier']->id));
             Configuration::updateValue('SOCOLISSIMO_CARRIER_ID_HIST', Configuration::get('SOCOLISSIMO_CARRIER_ID_HIST').'|'.intval($params['carrier']->id));
