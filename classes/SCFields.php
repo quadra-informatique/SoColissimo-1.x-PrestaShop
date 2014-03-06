@@ -49,7 +49,7 @@ class SCFields extends SCError
     // List of the available delivery type
     public $delivery_list = array(
         SCFields::HOME_DELIVERY => array('DOM', 'RDV'),
-        SCFields::RELAY_POINT => array('BPR', 'A2P', 'MRL', 'CIT', 'ACP', 'CDI', 'CMT'),
+        SCFields::RELAY_POINT => array('BPR', 'A2P', 'MRL', 'CIT', 'ACP', 'CDI', 'CMT','BDP'),
         SCFields::API_REQUEST => array('API')
     );
     // By default, use the home delivery
