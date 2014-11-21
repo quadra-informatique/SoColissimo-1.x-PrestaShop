@@ -53,7 +53,7 @@ class Socolissimo extends Module
 
         $this->name = 'socolissimo';
         $this->tab = 'Carriers';
-        $this->version = '1.8';
+        $this->version = '1.9';
         $this->limited_countries = array('fr');
         $this->needRange = true;
 
@@ -128,7 +128,7 @@ class Socolissimo extends Module
         if (!parent::install() OR !Configuration::updateValue('SOCOLISSIMO_ID', NULL) OR !Configuration::updateValue('SOCOLISSIMO_KEY', NULL) OR !Configuration::updateValue('SOCOLISSIMO_VERSION', '1.7')
                 OR !Configuration::updateValue('SOCOLISSIMO_URL', 'https://ws.colissimo.fr/pudo-fo-frame/storeCall.do') OR !Configuration::updateValue('SOCOLISSIMO_PREPARATION_TIME', 1) OR !Configuration::updateValue('SOCOLISSIMO_EXP_BEL', false)
                 OR !Configuration::updateValue('SOCOLISSIMO_OVERCOST', 3.01) OR !$this->registerHook('extraCarrier') OR !$this->registerHook('AdminOrder') OR !$this->registerHook('updateCarrier') OR !Configuration::updateValue('SOCOLISSIMO_COST_SELLER', 0)
-                OR !$this->registerHook('newOrder') OR !Configuration::updateValue('SOCOLISSIMO_SUP_URL', 'http://ws.colissimo.fr/supervision-pudo/supervision.jsp')
+                OR !$this->registerHook('newOrder') OR !Configuration::updateValue('SOCOLISSIMO_SUP_URL', 'http://ws.colissimo.fr/supervision-pudo-frame/supervision.jsp')
                 OR !Configuration::updateValue('SOCOLISSIMO_SUP', true))
             return false;
 
@@ -1172,7 +1172,7 @@ class Socolissimo extends Module
             Configuration::updateValue('SOCOLISSIMO_PRODUCT_ID_BELG', intval($product->id));
         }
         if (Configuration::get('SOCOLISSIMO_VERSION') != $this->version)
-            foreach (array('1.7') as $version)
+            foreach (array('1.7','1.9') as $version)
             {
                 $file = dirname(__FILE__).'/upgrade/install-'.$version.'.php';
                 if (Configuration::get('SOCOLISSIMO_VERSION') < $version && file_exists($file))
